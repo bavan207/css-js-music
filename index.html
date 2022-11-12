@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+       <link rel="stylesheet"href="style.css">
+       <title>bubble</title>
+    </head>
+    <body>
+        <h1>Drag</h1>
+        <h2 class="noSelect">You don't always need plan.<br>Sometimes<span>you just need to breath ,tust ,let go and see what happens.</span></h2>
+      <div class="container">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+      </div>    
+      <svg>
+        <filter id="gooey">
+            <feGaussianBlur in="SourceGrapic" stdDeviation="10"/>
+            <feColorMatrix values="
+            1 0 0 0 0 
+            0 1 0 0 0 
+            0 0 1 0 0
+            0 0 0 20 -10
+            "/>
+        </filter>
+      </svg>
+      <script src="https://code.jquery.com/jquery-3.6.1.js"> </script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"> </script>
+      <script>
+        $(function(){
+            $(".container div").draggable();
+        })
+        </script>
+
+<div class="move">
+    <p style="color: rgb(255, 255, 255);">click</p>
+    <img src="play.png" id="icon">
+</div>
+<audio id="mySong">
+  <source src="song1.mp3" type="audio/mp3">
+</audio>
+<script>
+var mySong =document.getElementById("mySong");
+var icon=document.getElementById("icon");
+icon.onclick=function(){
+   if(mySong.paused){
+    mySong.play();
+    icon.src="pause.png";
+   }else{
+    mySong.pause();
+    icon.src="play.png";
+
+   }
+}
+</script>
+
+    </body>
+ </html>
